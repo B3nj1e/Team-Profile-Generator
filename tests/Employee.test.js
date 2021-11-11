@@ -1,15 +1,19 @@
-const Employee = require("../lib/Employee")
+const Employee = require("../lib/Employee");
 
 describe("Employee", () => {
     describe("Initialiszation; employee question prompts", () => {
         it("should rest an object containing name, id, email and role when called with 'new' keyword", () => {
-            const obj = new Employee;
+            const num = 1;
+            const name = "Ben"
+            const email = "ben@email"
+            const role = "employee"
 
-            expect("number" in obj.id).toEqual(true);
-            expect("string" in obj.name).toEqual(true);
-            expect("string" in obj.email).toEqual(true);
-            expect("string" in obj.role).toEqual(true);
-           
+            const obj = new Employee("Ben", 1, "ben@email", "employee");
+
+            expect(obj.id).toEqual(num);
+            expect(obj.name).toEqual(name);
+            expect(obj.email).toEqual(email);
+            expect(obj.role).toEqual(role);
         })
     })
 } )
