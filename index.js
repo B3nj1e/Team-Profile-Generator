@@ -3,16 +3,19 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+// importing the required files and/or npms
 
+// setting container constant for card containers to be appended into 
 let cardContainer = "";
 
+// function for Manager class, creates HTML code and inserts the approriate Manager properties
 renderCard1 = (employee) => {
     cardContainer += 
     `
     <div class="card">
                 <div class="card-header">
                     <h2 id="name">${employee.name}</h2>
-                    <h3 id="position"><i class="fas fa-mug-hot"></i>  ${employee.role}</h3>
+                    <h3 id="position"><i class="fas fa-mug-hot"> </i>  ${employee.role}</h3>
                 </div>
                 <div class="list-container">
                 <ul class="list-group list-group-flush">
@@ -26,13 +29,14 @@ renderCard1 = (employee) => {
     `;
 };
 
+// function for Engineer class, created HTML code and inserts the appropriate Engineer properties
 renderCard2 = (employee) => {
     cardContainer += 
     `
     <div class="card">
                 <div class="card-header">
                     <h2 id="name">${employee.name}</h2>
-                    <h3 id="position"><i class="fas fa-glasses"></i>  ${employee.role}</h3>
+                    <h3 id="position"><i class="fas fa-glasses"> </i>  ${employee.role}</h3>
                 </div>
                 <div class="list-container">
                 <ul class="list-group list-group-flush">
@@ -46,13 +50,14 @@ renderCard2 = (employee) => {
     `;
 };
 
+// function for Intern class, created HTML code and inserts the appropriate Intern properties
 renderCard3 = (employee) => {
     cardContainer += 
     `
     <div class="card">
                 <div class="card-header">
                     <h2 id="name">${employee.name}</h2>
-                    <h3 id="position"><i class="fas fa-user-graduate"></i>  ${employee.role}</h3>
+                    <h3 id="position"><i class="fas fa-user-graduate"> </i>  ${employee.role}</h3>
                 </div>
                 <div class="list-container">
                 <ul class="list-group list-group-flush">
@@ -66,7 +71,7 @@ renderCard3 = (employee) => {
     `;
 };
 
-// initial questions to set the manager data
+// Initial question function to obtain user input data via the npm inquirer prompt
 function init() {
     inquirer
         .prompt([
@@ -123,6 +128,7 @@ function question() {
             name: "position",
             choices: ["Engineer", "Intern"]
         }).then((data) => {
+            // first lot of questions are for the engineer
             if (data.position == "Engineer") {
                 console.log(data);
                 inquirer.prompt([
@@ -167,6 +173,7 @@ function question() {
                         }
                     });
             } else {
+                // second lot of questions are for the intern
                 console.log(data);
                 inquirer.prompt([
                     {
@@ -213,12 +220,12 @@ function question() {
         })
 };
 
-
+// calling the inital question function to run the inquirer prompt
 init();
 
 
 
-
+// using template literals to set the CSS content
 const cssContent =
     `
 
@@ -274,6 +281,8 @@ const cssContent =
         border-radius: 0 0 10px 10px;
     }
 `;
+
+// function to create the HTML and CSS files. 
 function createFiles(cardinfo) {
 fs.writeFile("./dist/team.html", `
 <!DOCTYPE html>
