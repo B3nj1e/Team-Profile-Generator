@@ -12,7 +12,7 @@ renderCard1 = (employee) => {
     <div class="card">
                 <div class="card-header">
                     <h2 id="name">${employee.name}</h2>
-                    <h3 id="position">${employee.role}</h3>
+                    <h3 id="position"><i class="fas fa-mug-hot"></i>  ${employee.role}</h3>
                 </div>
                 <div class="list-container">
                 <ul class="list-group list-group-flush">
@@ -32,13 +32,13 @@ renderCard2 = (employee) => {
     <div class="card">
                 <div class="card-header">
                     <h2 id="name">${employee.name}</h2>
-                    <h3 id="position">${employee.role}</h3>
+                    <h3 id="position"><i class="fas fa-glasses"></i>  ${employee.role}</h3>
                 </div>
                 <div class="list-container">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${employee.id}</li>
                     <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
-                    <li class="list-group-item">GitHub: ${employee.github}</li>
+                    <li class="list-group-item">GitHub: <a href="https://github.com/${employee.github}" target="_blank">${employee.github}</a></li>
                 </ul>
                 </div>
             </div>
@@ -52,7 +52,7 @@ renderCard3 = (employee) => {
     <div class="card">
                 <div class="card-header">
                     <h2 id="name">${employee.name}</h2>
-                    <h3 id="position">${employee.role}</h3>
+                    <h3 id="position"><i class="fas fa-user-graduate"></i>  ${employee.role}</h3>
                 </div>
                 <div class="list-container">
                 <ul class="list-group list-group-flush">
@@ -100,7 +100,6 @@ function init() {
             if (data.anotherone) {
                 const manager = new Manager(data.name, data.id, data.email, data.officenumber)
                 console.log(manager);
-                manager.getOfficeNumber();
                 renderCard1(manager);
                 console.log(cardContainer);
                 question();
@@ -220,74 +219,6 @@ init();
 
 
 
-
-
-
-
-
-
-
-// // let cardContainer = "";
-
-// renderCard2 = (employee) => {
-//     cardContainer += 
-//     `
-//     <div class="card">
-//                 <div class="card-header">
-//                     <h2 id="name">${employee.name}</h2>
-//                     <h3 id="position">${employee.role}</h3>
-//                 </div>
-//                 <div class="list-container">
-//                 <ul class="list-group list-group-flush">
-//                     <li class="list-group-item">${employee.id}</li>
-//                     <li class="list-group-item">${employee.email}</li>
-//                     <li class="list-group-item">${employee.officenumber}</li>
-//                 </ul>
-//                 </div>
-//             </div>
-//     `;
-
-// // };
-
-// renderCard2();
-
-const htmlContent =
-`
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Profile Generator</title>
-    <!-- bootstrap cdn -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- link to CSS styling -->
-    <link rel="stylesheet" href="./team.css">
-</head>
-
-
-<body>
-    <header id="page-header">
-        <h1>My Team</h1>
-    </header>
-    <div id=body-container>
-        <div id="card-container">
-
-        ${cardContainer}
-
-        </div>
-    </div>
-
-
-    <script src="../index.js"></script>
-</body>
-
-</html>
-`;
-
-
 const cssContent =
     `
 
@@ -355,6 +286,8 @@ fs.writeFile("./dist/team.html", `
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- link to font awesome -->
+    <script src="https://kit.fontawesome.com/b5ea887d93.js" crossorigin="anonymous"></script>
     <!-- link to CSS styling -->
     <link rel="stylesheet" href="./team.css">
 </head>
@@ -386,77 +319,3 @@ fs.writeFile("./dist/team.css", cssContent, (err) => {
 });
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// renderCard = () => {
-//     const cardContainer = document.getElementById("card-container")
-//     const card = document.createElement("div");
-//     const cardHeader = document.createElement("div");
-//     const listContainer = document.createElement("div");
-//     const list = document.createElement("ul")
-//     const nameEl = document.createElement("h2");
-//     const positionEl = document.createElement("h3");
-//     const idEl = document.createElement("li");
-//     const emailEl = document.createElement("li");
-//     const officeNumEl = document.createElement("li");
-
-//     card.setAttribute("class", "card");
-//     cardHeader.setAttribute("class", "card-header");
-//     listContainer.setAttribute("class", "list-container");
-//     list.setAttribute("class", "list-group list-group-flush")
-
-//     listContainer.appendChild(list);
-//     card.appendChild(cardHeader);
-//     card.appendChild(listContainer);
-//     cardContainer.appendChild(card);
-
-//     nameEl.textContent = this.name;
-//     positionEl.textContent = this.role;
-//     idEl.textContent = this.id;
-//     emailEl.textContent = this.email;
-//     officeNumEl.textContent = this.officenumber;
-// }
-
-// renderCard();
-
-// renderCard2 = () => {
-//     const cardContent = 
-//     `
-//     <div class="card">
-//                 <div class="card-header">
-//                     <h2 id="name">${this.name}</h2>
-//                     <h3 id="position">${this.role}</h3>
-//                 </div>
-//                 <div class="list-container">
-//                 <ul class="list-group list-group-flush">
-//                     <li class="list-group-item">${this.id}</li>
-//                     <li class="list-group-item">${this.email}</li>
-//                     <li class="list-group-item">${this.officenumber}</li>
-//                 </ul>
-//                 </div>
-//             </div>
-//     `;
-//     cardContainer += cardContent;
-// };
-
-// renderCard2();
