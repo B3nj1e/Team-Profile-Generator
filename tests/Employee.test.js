@@ -2,7 +2,7 @@ const Employee = require("../lib/Employee");
 
 describe("Employee", () => {
     describe("Initialiszation; employee question prompts", () => {
-        it("should return an employee object containing name, id, email and role when called with 'new' keyword", () => {
+        it("should return an employee object containing a role when called with 'new' keyword", () => {
             const role = "employee"
 
             const obj = new Employee("Ben", 1, "ben@email");

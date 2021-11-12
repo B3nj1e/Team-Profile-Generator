@@ -35,7 +35,7 @@ describe("Intern", () => {
             expect(obj.role).toEqual(role);
 
         })
-        it("should return an object containing an office number when called with 'new' keyword", () => {
+        it("should return an object containing a school when called with 'new' keyword", () => {
             const school = "Adelaide Uni";
 
             const obj = new Intern("Ben", 1, "ben@email", "Adelaide Uni");
@@ -43,7 +43,7 @@ describe("Intern", () => {
             expect(obj.school).toEqual(school);
             
         })
-        it("should return an object containing a method to get the office number when called with 'new' keyword", () => {
+        it("should return an object containing a method to get the school when called with 'new' keyword", () => {
             const getSchoolString = console.log("Ben's attends Adelaide Uni");
 
             const obj = new Intern("Ben", 1, "ben@email", "Adelaide Uni");

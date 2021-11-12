@@ -35,7 +35,7 @@ describe("Engineer", () => {
             expect(obj.role).toEqual(role);
 
         })
-        it("should return an object containing an office number when called with 'new' keyword", () => {
+        it("should return an object containing an github username when called with 'new' keyword", () => {
             const github = "Benji";
 
             const obj = new Engineer("Ben", 1, "ben@email", "Benji");
@@ -43,7 +43,7 @@ describe("Engineer", () => {
             expect(obj.github).toEqual(github);
             
         })
-        it("should return an object containing a method to get the office number when called with 'new' keyword", () => {
+        it("should return an object containing a method to get the github username when called with 'new' keyword", () => {
             const getGithubString = console.log("Ben's github username is Benji");
 
             const obj = new Engineer("Ben", 1, "ben@email", "Benji");
