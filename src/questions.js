@@ -31,116 +31,169 @@ inquirer
     .then((data) => {
         if (data.anotherone) {
             console.log(data);
-            inquirer.prompt(
-                {
-                    type: 'list',
-                    message: "What is the position of your team member?",
-                    name: "position",
-                    choices: ["Engineer", "Intern"]
-                }).then((data) => {
-                if (data.position == "Engineer") {
-                    console.log(data);
-                    inquirer.prompt([
-                        {
-                            type: 'input',
-                            message: "What is their name?",
-                            name: "name",
-                        },
-                        {
-                            type: 'number',
-                            message: "What is their employee ID?",
-                            name: "id",
-                        },
-                        {
-                            type: 'input',
-                            message: "What is their email address?",
-                            name: "email"
-                        },
-                        {
-                            type: 'input',
-                            message: "What is their GitHub username?",
-                            name: "GitHub"
-                        },
-                        {
-                            type: 'confirm',
-                            message: "Would you like to add another team member",
-                            name: "anotherone",
-                        }]).then((data) => {
-                        if (data.anotherone) {
-                            console.log(data);
-                            // question()
-                        } else {
-                            console.log(data)
-                            return;
-                        }});
-                } else {
-                    console.log(data);
-                    inquirer.prompt([
-                        {
-                            type: 'input',
-                            message: "What is their name?",
-                            name: "name",
-                        },
-                        {
-                            type: 'number',
-                            message: "What is their employee ID?",
-                            name: "id",
-                        },
-                        {
-                            type: 'input',
-                            message: "What is their email address?",
-                            name: "email"
-                        },
-                        {
-                            type: 'input',
-                            message: "What school do they attend?",
-                            name: "school"
-                        },
-                        {
-                            type: 'confirm',
-                            message: "Would you like to add another team member",
-                            name: "anotherone",
-                        }]).then((data) => {
-                        if (data.anotherone) {
-                            console.log(data);
-                            // question()
-                        } else {
-                            console.log(data)
-                            return;
-                        }});
-                }})}});
+            question();
+        }});
+
+            // inquirer.prompt(
+            //     {
+            //         type: 'list',
+            //         message: "What is the position of your team member?",
+            //         name: "position",
+            //         choices: ["Engineer", "Intern"]
+            //     }).then((data) => {
+            //     if (data.position == "Engineer") {
+            //         console.log(data);
+            //         inquirer.prompt([
+            //             {
+            //                 type: 'input',
+            //                 message: "What is their name?",
+            //                 name: "name",
+            //             },
+            //             {
+            //                 type: 'number',
+            //                 message: "What is their employee ID?",
+            //                 name: "id",
+            //             },
+            //             {
+            //                 type: 'input',
+            //                 message: "What is their email address?",
+            //                 name: "email"
+            //             },
+            //             {
+            //                 type: 'input',
+            //                 message: "What is their GitHub username?",
+            //                 name: "GitHub"
+            //             },
+            //             {
+            //                 type: 'confirm',
+            //                 message: "Would you like to add another team member",
+            //                 name: "anotherone",
+            //             }]).then((data) => {
+            //             if (data.anotherone) {
+            //                 console.log(data);
+            //                 // question();
+            //             } else {
+            //                 console.log(data)
+            //                 return;
+            //             }});
+            //     } else {
+            //         console.log(data);
+            //         inquirer.prompt([
+            //             {
+            //                 type: 'input',
+            //                 message: "What is their name?",
+            //                 name: "name",
+            //             },
+            //             {
+            //                 type: 'number',
+            //                 message: "What is their employee ID?",
+            //                 name: "id",
+            //             },
+            //             {
+            //                 type: 'input',
+            //                 message: "What is their email address?",
+            //                 name: "email"
+            //             },
+            //             {
+            //                 type: 'input',
+            //                 message: "What school do they attend?",
+            //                 name: "school"
+            //             },
+            //             {
+            //                 type: 'confirm',
+            //                 message: "Would you like to add another team member",
+            //                 name: "anotherone",
+            //             }]).then((data) => {
+            //             if (data.anotherone) {
+            //                 console.log(data);
+            //                 // question();
+            //             } else {
+            //                 console.log(data)
+            //                 return;
+            //             }});
+            //     }})}});
                   
 
 
-function questionEngineer() {
-    inquirer.prompt([
+function question() {
+    inquirer.prompt(
         {
-            type: 'input',
-            message: "What is their name?",
-            name: "name",
-        },
-        {
-            type: 'number',
-            message: "What is their employee ID?",
-            name: "id",
-        },
-        {
-            type: 'input',
-            message: "What is their email address?",
-            name: "email"
-        },
-        {
-            type: 'input',
-            message: "What is their GitHub username?",
-            name: "GitHub"
-        },
-        {
-            type: 'confirm',
-            message: "Would you like to add another team member",
-            name: "anotherone",
-        }
-    ])
-};
+            type: 'list',
+            message: "What is the position of your team member?",
+            name: "position",
+            choices: ["Engineer", "Intern"]
+        }).then((data) => {
+        if (data.position == "Engineer") {
+            console.log(data);
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    message: "What is their name?",
+                    name: "name",
+                },
+                {
+                    type: 'number',
+                    message: "What is their employee ID?",
+                    name: "id",
+                },
+                {
+                    type: 'input',
+                    message: "What is their email address?",
+                    name: "email"
+                },
+                {
+                    type: 'input',
+                    message: "What is their GitHub username?",
+                    name: "GitHub"
+                },
+                {
+                    type: 'confirm',
+                    message: "Would you like to add another team member",
+                    name: "anotherone",
+                }]).then((data) => {
+                if (data.anotherone) {
+                    console.log(data);
+                    question();
+                } else {
+                    console.log(data)
+                    return;
+                }});
+        } else {
+            console.log(data);
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    message: "What is their name?",
+                    name: "name",
+                },
+                {
+                    type: 'number',
+                    message: "What is their employee ID?",
+                    name: "id",
+                },
+                {
+                    type: 'input',
+                    message: "What is their email address?",
+                    name: "email"
+                },
+                {
+                    type: 'input',
+                    message: "What school do they attend?",
+                    name: "school"
+                },
+                {
+                    type: 'confirm',
+                    message: "Would you like to add another team member",
+                    name: "anotherone",
+                }]).then((data) => {
+                if (data.anotherone) {
+                    console.log(data);
+                    question();
+                } else {
+                    console.log(data)
+                    return;
+                }});
+        }})};
 
 
 
