@@ -47,10 +47,10 @@ THEN I exit the application, and the HTML is generated
 
 
 ## Installation Instructions
-To use the application, please download all associated files off the [GitHub repository](https://github.com/B3nj1e/Team-Profile-Generator). Ensure node.js is installed. In the terminal run ``npm init``, followed by `` npm i`` to install the dependencies, including inquirer and jest. Once the inquirer package has been installed, in the terminal type ``node index.js``. This should initiate user prompts in the terminal. Answer all of the questions that are presented in the terminal. Upon completion of these steps, you should have a team.html and team.css file located in the dist directory.  
+To use the application, please download all associated files off the [GitHub repository](https://github.com/B3nj1e/Team-Profile-Generator). Ensure node.js is installed. In the terminal run `` npm i`` to install the dependencies, including inquirer and jest. Once the inquirer package has been installed, in the terminal type ``node index.js``. This should initiate user prompts in the terminal. Answer all of the questions that are presented in the terminal. Upon completion of these steps, you should have a team.html and team.css file located in the dist directory.  
 
 ## Usage Instructions
-Please click [here]() to view a video tutorial on how to use this application. 
+Please click [here](https://watch.screencastify.com/v/HaYwzaeqKhAsJJyOBBPK) to view a video tutorial on how to use this application. 
 
 ## Contribution Guidelines
 If you think you can improve this application, please feel free to make contributions. I will review these changes on GitHub prior to merging them to the main branch.

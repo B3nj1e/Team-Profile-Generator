@@ -130,7 +130,6 @@ function question() {
         }).then((data) => {
             // first lot of questions are for the engineer
             if (data.position == "Engineer") {
-                console.log(data);
                 inquirer.prompt([
                     {
                         type: 'input',
@@ -168,13 +167,13 @@ function question() {
                             console.log(engineer);
                             renderCard2(engineer);
                             console.log(cardContainer);
+                            // if not adding another team member, then create html and css files
                             createFiles(cardContainer);
                             return;
                         }
                     });
             } else {
                 // second lot of questions are for the intern
-                console.log(data);
                 inquirer.prompt([
                     {
                         type: 'input',
@@ -212,6 +211,7 @@ function question() {
                             console.log(intern);
                             renderCard3(intern);
                             console.log(cardContainer);
+                            // if not adding another team member, then create html and css files
                             createFiles(cardContainer);
                             return;
                         }
